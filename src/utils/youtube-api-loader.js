@@ -1,4 +1,4 @@
-import loadAPI from './load-api'
+// import loadAPI from './load-api'
 
 export default {
   _queue: [],
@@ -13,20 +13,20 @@ export default {
 
       // load the Youtube API if this was the first component added
       if (this._queue.length === 1) {
-        this._loadAPI()
+        // this._loadAPI()
       }
     }
   },
 
-  _loadAPI: function () {
-    loadAPI('//youtube.com/player_api')
+  // _loadAPI: function () {
+  //   loadAPI('//youtube.com/player_api')
 
-    window.onYouTubeIframeAPIReady = () => {
-      this._isLoaded = true
-      for (let i = this._queue.length; i--;) {
-        this._queue[i]._createPlayer()
-      }
-      this._queue = []
-    }
-  }
+  //   window.onYouTubeIframeAPIReady = () => {
+  //     this._isLoaded = true
+  //     for (let i = this._queue.length; i--;) {
+  //       this._queue[i]._createPlayer()
+  //     }
+  //     this._queue = []
+  //   }
+  // }
 }

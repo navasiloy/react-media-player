@@ -1,9 +1,9 @@
 import React, { Component, PropTypes, Children } from 'react'
 import ReactDOM, { findDOMNode } from 'react-dom'
 import contextTypes from './context-types'
-import requestFullscreen from './utils/request-fullscreen'
-import exitFullscreen from './utils/exit-fullscreen'
-import fullscreenChange from './utils/fullscreen-change'
+// import requestFullscreen from './utils/request-fullscreen'
+// import exitFullscreen from './utils/exit-fullscreen'
+// import fullscreenChange from './utils/fullscreen-change'
 
 const MEDIA_EVENTS = {
   onPlay: 'isPlaying',
@@ -53,11 +53,11 @@ class Media extends Component {
   }
 
   componentDidMount() {
-    fullscreenChange('add', this._handleFullscreenChange)
+    // fullscreenChange('add', this._handleFullscreenChange)
   }
 
   componentWillUnmount() {
-    fullscreenChange('remove', this._handleFullscreenChange)
+    // fullscreenChange('remove', this._handleFullscreenChange)
   }
 
   _getPublicMediaProps() {
@@ -186,11 +186,11 @@ class Media extends Component {
   }
 
   fullscreen = () => {
-    if (!this.state.isFullscreen) {
-      findDOMNode(this._player)[requestFullscreen]()
-    } else {
-      document[exitFullscreen]()
-    }
+    // if (!this.state.isFullscreen) {
+    //   findDOMNode(this._player)[requestFullscreen]()
+    // } else {
+    //   document[exitFullscreen]()
+    // }
   }
 
   _handleFullscreenChange = ({ target }) => {
